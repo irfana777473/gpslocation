@@ -1,0 +1,30 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GPS Location</title>
+</head>
+<body>
+    <h2>GPS Location Information</h2>
+
+    <button onclick="getLocation()">Get Location</button>
+
+    <p id="result"></p>
+
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    document.getElementById("result").innerHTML =
+                        "Latitude: " + position.coords.latitude +
+                        "<br>Longitude: " + position.coords.longitude;
+                });
+            } else {
+                document.getElementById("result").innerHTML =
+                    "GPS not supported";
+            }
+        }
+    </script>
+</body>
+</html>
+```
